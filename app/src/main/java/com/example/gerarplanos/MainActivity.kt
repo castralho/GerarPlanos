@@ -11,6 +11,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.gerarplanos.ui.theme.GerarPlanosTheme
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Greeting()
                 }
             }
         }
@@ -33,14 +34,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(modifier: Modifier = Modifier) {
     Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
         Text(
-            text = "Hello $name!",
+            text = stringResource(id = R.string.app_name),
             modifier = modifier
         )
         Text(
-            text = "Hello $name!",
+            text = stringResource(id = R.string.batatas),
             modifier = modifier
         )
     }
@@ -51,6 +52,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     GerarPlanosTheme {
-        Greeting("Android")
+        Greeting()
     }
 }
